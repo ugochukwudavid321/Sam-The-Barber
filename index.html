@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Barber in Lufkin TX | Sam The Barber</title>
+    <meta name="description" content="Top rated barber in Lufkin TX. Precision fades, beard trims, and clean cuts. Book with Sam The Barber today.">
+    
+    <!-- SEO JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Sam The Barber",
+      "description": "Professional barber services in Lufkin Texas including fades, beard grooming, and precision haircuts.",
+      "areaServed": "Lufkin TX",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "532 S Chestnut",
+        "addressLocality": "Lufkin",
+        "addressRegion": "TX",
+        "postalCode": "75901"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "366"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "(936) 676-2172",
+        "contactType": "customer service"
+      }
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        barber: {
+                            gold: '#c9a227',
+                            dark: '#0b0b0b',
+                            card: '#151515',
+                            border: '#2a2a2a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            background-color: #0b0b0b;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .placeholder-img {
+            background: linear-gradient(145deg, #1a1a1a, #111111);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.875rem;
+            border: 1px solid #2a2a2a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .placeholder-img::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(201, 162, 39, 0.05) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -100% -100%; }
+            100% { background-position: 200% 200%; }
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Focus styles for accessibility */
+        button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible {
+            outline: 2px solid #c9a227;
+            outline-offset: 2px;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-barber-gold selection:text-black">
+
+    <!-- Particle Background -->
+    <canvas id="particles" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0b0b0b]/90 backdrop-blur-md border-b border-barber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="scissors" class="text-barber-gold w-6 h-6"></i>
+                    <span class="font-bold text-xl tracking-tight text-white uppercase glow-text">Sam The Barber</span>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="tel:9366762172" class="hidden md:flex items-center gap-2 text-gray-300 hover:text-barber-gold transition-colors font-medium min-h-[44px] px-2" aria-label="Call Sam The Barber">
+                        <i data-lucide="phone" class="w-4 h-4"></i> (936) 676-2172
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden">
+    <div class="absolute inset-0 z-[-1] opacity-3000">
+        <img src="sam's_barbershop_asset/hero-image.jpeg" alt="Sam The Barber Lufkin TX" class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0b0b0b]/70 via-[#0b0b0b]/90 to-[#0b0b0b] z-[-1]"></div>
+        
+        <div class="max-w-4xl mx-auto text-center hero-content">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-barber-card border border-barber-border text-sm font-medium mb-8">
+                <div class="flex text-barber-gold">
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <span class="text-gray-300">5.0 (366+ Reviews)</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                SAM THE BARBER
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Clean fades, razor finishes, and a barber you can trust every time. Step in, unwind, and walk out looking your absolute best.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#booking" class="w-full sm:w-auto bg-barber-gold hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded text-lg min-h-[44px] min-w-[44px] transition-transform active:scale-95 shadow-[0_0_20px_rgba(201,162,39,0.3)]" aria-label="Book your cut">
+                    Book Your Cut
+                </a>
+                <a href="tel:9366762172" class="w-full sm:w-auto bg-transparent border-2 border-barber-border hover:border-barber-gold text-white font-bold py-4 px-8 rounded text-lg min-h-[44px] min-w-[44px] transition-colors flex justify-center items-center gap-2" aria-label="Call now">
+                    <i data-lucide="phone" class="w-5 h-5"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Persuasive Copy Section -->
+    <section class="py-20 bg-[#0b0b0b] px-4 border-t border-barber-border/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="gsap-fade-up bg-barber-card border border-barber-border rounded-2xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-barber-gold/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+                
+                <h2 class="text-3xl font-bold text-white mb-6">One Barber. One Standard.</h2>
+
+<div class="prose prose-invert prose-lg text-gray-300 leading-relaxed">
+    <p class="mb-4">
+        Finding a reliable <strong>barber in Lufkin TX</strong> shouldn't be a gamble. Most shops rush you in, hand you off to whoever's free, and send you out looking different every time. Bobby doesn't work like that.
+    </p>
+    <p class="mb-4">
+        One chair. One barber. Bobby cuts your hair exactly how you ask — and because it's always Bobby, he already knows your head, your hair, and how you like it before you even sit down.
+    </p>
+    <p>
+        Lufkin has had plenty of barbershops come and go. Bobby's Cut-N-Up has stayed — because when you get up from that chair, you look right. Clean line-up, sharp fade, no surprises. Call ahead, get your spot, and find out why customers who started coming here as kids still haven't left.
+    </p>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Image Slider -->
+    <section class="py-12 bg-[#0b0b0b]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <i data-lucide="camera" class="text-barber-gold w-6 h-6"></i> In The Shop
+            </h2>
+        </div>
+        <div class="flex overflow-x-auto hide-scrollbar gap-4 px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-mandatory">
+   <!-- Slide 1 -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[30vw] aspect-[4/3] rounded-xl overflow-hidden border border-barber-border">
+    <img src="sam's_barbershop_asset/image1.jpeg" alt="Sam The Barber Lufkin TX" class="w-full h-full object-cover">
+</div>
+
+    <!-- Slide 2 -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[30vw] aspect-[4/3] rounded-xl overflow-hidden border border-barber-border">
+    <img src="sam's_barbershop_asset/image2.jpeg" alt="Sam The Barber Lufkin TX" class="w-full h-full object-cover">
+</div>
+
+            <!-- Slide 3 -->
+<div class="snap-center shrink-0 w-[85vw] sm:w-[60vw] md:w-[40vw] lg:w-[30vw] aspect-[4/3] rounded-xl overflow-hidden border border-barber-border">
+    <img src="sam's_barbershop_asset/image3.jpeg" alt="Sam The Barber Lufkin TX" class="w-full h-full object-cover">
+</div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-barber-card/30 px-4 border-y border-barber-border">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 gsap-fade-up">
+                <h2 class="text-4xl font-bold text-white mb-4">Grooming Services</h2>
+                <p class="text-gray-400">Premium cuts tailored to your style. Select a service to book.</p>
+            </div>
+
+            <div class="space-y-6">
+                
+                <!-- Service 1: Haircut & Beard -->
+                <div class="gsap-fade-up bg-barber-card border border-barber-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 hover:border-barber-gold/50 transition-colors">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="text-2xl font-bold text-white">Haircut & Beard</h3>
+                            <span class="bg-barber-gold/10 text-barber-gold text-xs px-2 py-1 rounded border border-barber-gold/20 font-medium">Popular</span>
+                        </div>
+                        <div class="flex items-end gap-3 mb-4">
+                            <span class="text-3xl font-bold text-barber-gold glow-text">$45</span>
+                            <span class="text-gray-400 text-sm mb-1 flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 1 hour</span>
+                        </div>
+                        <p class="text-gray-300 mb-6">Haircut with straight razor beard finish.</p>
+                        <button onclick="selectService('Haircut & Beard', '$45')" class="w-full md:w-auto bg-transparent border border-barber-gold text-barber-gold hover:bg-barber-gold hover:text-black font-semibold py-3 px-8 rounded min-h-[44px] transition-colors" aria-label="Book Haircut and Beard">
+                            Select Service
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-[#0b0b0b] rounded-lg p-6 border border-barber-border flex flex-col justify-center relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute top-4 left-4 w-8 h-8 text-barber-border/40"></i>
+                        <p class="text-gray-400 italic text-sm relative z-10">"Best fade in Lufkin. The razor work on the beard is flawless. Sam never misses."</p>
+                        <div class="flex items-center gap-1 mt-3 text-barber-gold">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Adult Haircut -->
+                <div class="gsap-fade-up bg-barber-card border border-barber-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 hover:border-barber-gold/50 transition-colors">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-2">Adult Haircut</h3>
+                        <div class="flex items-end gap-3 mb-4">
+                            <span class="text-3xl font-bold text-barber-gold glow-text">$40</span>
+                            <span class="text-gray-400 text-sm mb-1 flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 40 minutes</span>
+                        </div>
+                        <p class="text-gray-300 mb-6">Nice fade with straight razor finish.</p>
+                        <button onclick="selectService('Adult Haircut', '$40')" class="w-full md:w-auto bg-transparent border border-barber-gold text-barber-gold hover:bg-barber-gold hover:text-black font-semibold py-3 px-8 rounded min-h-[44px] transition-colors" aria-label="Book Adult Haircut">
+                            Select Service
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-[#0b0b0b] rounded-lg p-6 border border-barber-border flex flex-col justify-center relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute top-4 left-4 w-8 h-8 text-barber-border/40"></i>
+                        <p class="text-gray-400 italic text-sm relative z-10">"Cleanest line-up I've had in years. Highly recommend if you want it done right."</p>
+                        <div class="flex items-center gap-1 mt-3 text-barber-gold">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Kid's Haircut -->
+                <div class="gsap-fade-up bg-barber-card border border-barber-border rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 hover:border-barber-gold/50 transition-colors">
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold text-white mb-2">Kid's Haircut (10 & under)</h3>
+                        <div class="flex items-end gap-3 mb-4">
+                            <span class="text-3xl font-bold text-barber-gold glow-text">$25</span>
+                            <span class="text-gray-400 text-sm mb-1 flex items-center gap-1"><i data-lucide="clock" class="w-4 h-4"></i> 25 minutes</span>
+                        </div>
+                        <p class="text-gray-300 mb-6">Kids combover with hard part. Sharp and stylish for the little ones.</p>
+                        <button onclick="selectService('Kid\'s Haircut', '$25')" class="w-full md:w-auto bg-transparent border border-barber-gold text-barber-gold hover:bg-barber-gold hover:text-black font-semibold py-3 px-8 rounded min-h-[44px] transition-colors" aria-label="Book Kids Haircut">
+                            Select Service
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-[#0b0b0b] rounded-lg p-6 border border-barber-border flex flex-col justify-center relative overflow-hidden">
+                        <i data-lucide="quote" class="absolute top-4 left-4 w-8 h-8 text-barber-border/40"></i>
+                        <p class="text-gray-400 italic text-sm relative z-10">"Sam is so patient with my son. He loves his new cut!"</p>
+                        <div class="flex items-center gap-1 mt-3 text-barber-gold">
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                            <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Menu Mini-Grid -->
+                <div class="gsap-fade-up mt-12">
+                    <h3 class="text-2xl font-bold text-white mb-6 border-b border-barber-border pb-4">Full Service Menu</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-barber-card border border-barber-border p-4 rounded flex justify-between items-center group hover:border-gray-500 cursor-pointer transition-colors" onclick="selectService('Middle / High School Student', '$30')">
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-barber-gold transition-colors">Middle / High School</h4>
+                                <span class="text-xs text-gray-500">30 minutes</span>
+                            </div>
+                            <span class="text-barber-gold font-bold">$30</span>
+                        </div>
+                        <div class="bg-barber-card border border-barber-border p-4 rounded flex justify-between items-center group hover:border-gray-500 cursor-pointer transition-colors" onclick="selectService('The Works', '$50')">
+                            <div>
+                                <h4 class="font-bold text-white group-hover:text-barber-gold transition-colors">The Works</h4>
+                                <span class="text-xs text-gray-500">Haircut, Beard & Eyebrows</span>
+                            </div>
+                            <span class="text-barber-gold font-bold">$50</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-[#0b0b0b] px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 gsap-fade-up">
+                <h2 class="text-4xl font-bold text-white mb-4">The Work</h2>
+                <p class="text-gray-400">Precision and consistency in every cut.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+       <!-- 12 Gallery Images (Image 4 to Image 15) -->
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 4.jpeg" alt="Barbering Excellence Lufkin" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 5.jpeg" alt="Precision Haircut" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 6.jpeg" alt="Clean Fade" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 7.jpeg" alt="Beard Grooming" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 8.jpeg" alt="Sharp Lineup" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 9.jpeg" alt="Razor Finish" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 10.jpeg" alt="Men's Style Lufkin" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 11.jpeg" alt="Professional Barbering" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 12.jpeg" alt="Classic Taper" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 13.jpeg" alt="Modern Styling" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 14.jpeg" alt="Grooming Detail" class="w-full h-full object-cover">
+</div>
+<div class="aspect-[4/5] rounded-lg overflow-hidden border border-barber-border hover:scale-[1.02] transition-transform cursor-pointer">
+    <img src="sam's_barbershop_asset/image 15.jpeg" alt="Sam The Barber Work" class="w-full h-full object-cover">
+</div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Info Section -->
+    <section id="booking" class="py-20 bg-barber-card/50 px-4 border-t border-barber-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-5 gap-12">
+                
+                <!-- Booking Form -->
+                <div class="lg:col-span-3 bg-[#0b0b0b] p-8 md:p-10 rounded-2xl border border-barber-border relative overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-barber-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <h2 class="text-3xl font-bold text-white mb-2">Book Your Appointment</h2>
+                    <p class="text-gray-400 mb-8">Secure your spot. Walk-ins subject to availability.</p>
+
+                    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6 relative z-10">
+    <!-- Web3Forms Access Key - Replace 'YOUR_ACCESS_KEY_HERE' with your actual key -->
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+    
+    <!-- Optional: Redirect after success (replace with your URL) -->
+    <!-- <input type="hidden" name="redirect" value="https://yourwebsite.com/thanks.html"> -->
+    
+    <!-- Anti-Spam Honeypot -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+    <label for="serviceName" class="block text-sm font-medium text-gray-400 mb-2">Selected Service</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i data-lucide="scissors" class="w-5 h-5 text-gray-500"></i>
+        </div>
+        <select id="serviceName" required class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full pl-10 pr-10 p-3 min-h-[44px] appearance-none cursor-pointer" aria-label="Selected Service" onchange="document.getElementById('servicePrice').value = this.options[this.selectedIndex].getAttribute('data-price');">
+            <option value="Adult Haircut" data-price="$40" selected>Adult Haircut</option>
+            <option value="Haircut & Beard" data-price="$45">Haircut & Beard</option>
+            <option value="Kid's Haircut" data-price="$25">Kid's Haircut (10 & under)</option>
+            <option value="Middle / High School Student" data-price="$30">Middle / High School Student</option>
+            <option value="The Works" data-price="$50">The Works</option>
+        </select>
+        <!-- Added dropdown arrow icon -->
+        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+            <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500"></i>
+        </div>
+    </div>
+</div>
+<!-- Price Auto-fill -->
+<div>
+    <label for="servicePrice" class="block text-sm font-medium text-gray-400 mb-2">Amount</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <i data-lucide="dollar-sign" class="w-5 h-5 text-gray-500"></i>
+        </div>
+        <input type="text" id="servicePrice" readonly value="$40" class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full pl-10 p-3 min-h-[44px] cursor-not-allowed font-bold" aria-label="Service Amount">
+    </div>
+</div>
+
+
+
+                        <!-- Name -->
+                        <div>
+                            <label for="clientName" class="block text-sm font-medium text-gray-400 mb-2">Full Name</label>
+                            <input type="text" id="clientName" required placeholder="John Doe" class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full p-3 min-h-[44px]" aria-label="Full Name">
+                        </div>
+
+                        <!-- Date & Time Row -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label for="bookingMonth" class="block text-sm font-medium text-gray-400 mb-2">Month</label>
+                                <select id="bookingMonth" required class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full p-3 min-h-[44px] appearance-none" aria-label="Select Month">
+                                    <option value="" disabled selected>Select Month</option>
+                                    <option value="Jan">January</option>
+                                    <option value="Feb">February</option>
+                                    <option value="Mar">March</option>
+                                    <option value="Apr">April</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">June</option>
+                                    <option value="Jul">July</option>
+                                    <option value="Aug">August</option>
+                                    <option value="Sep">September</option>
+                                    <option value="Oct">October</option>
+                                    <option value="Nov">November</option>
+                                    <option value="Dec">December</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="bookingDay" class="block text-sm font-medium text-gray-400 mb-2">Day</label>
+                                <select id="bookingDay" required class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full p-3 min-h-[44px] appearance-none" aria-label="Select Day">
+                                    <option value="" disabled selected>Select Day</option>
+                                    <option value="Mon">Monday</option>
+                                    <option value="Tue">Tuesday</option>
+                                    <option value="Wed">Wednesday</option>
+                                    <option value="Thu">Thursday</option>
+                                    <option value="Fri">Friday</option>
+                                    <option value="Sat">Saturday</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="bookingTime" class="block text-sm font-medium text-gray-400 mb-2">Time</label>
+                                <select id="bookingTime" required class="bg-barber-card border border-barber-border text-white text-base rounded focus:ring-barber-gold focus:border-barber-gold block w-full p-3 min-h-[44px] appearance-none" aria-label="Select Time">
+                                    <option value="" disabled selected>Select Time</option>
+                                    <!-- Times generated based on business hours roughly -->
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="1:00 PM">1:00 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                    <option value="6:00 PM">6:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-barber-gold hover:bg-yellow-600 text-black font-bold py-4 px-8 rounded text-lg min-h-[44px] transition-transform active:scale-95 shadow-[0_0_15px_rgba(201,162,39,0.3)] mt-4 flex justify-center items-center gap-2" aria-label="Request Appointment">
+                            Request Appointment <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <p class="text-xs text-center text-gray-500 mt-4">*For after-hours or special scheduling, please text <a href="sms:+19366762172" class="text-barber-gold hover:underline"> (936) 676-2172</a> directly.</p>
+                    </form>
+                </div>
+
+                <!-- Info Side Panel -->
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Hours -->
+                    <div class="bg-[#0b0b0b] p-6 rounded-xl border border-barber-border">
+                        <div class="flex items-center gap-3 mb-6 border-b border-barber-border pb-4">
+                            <i data-lucide="clock" class="w-6 h-6 text-barber-gold"></i>
+                            <h3 class="text-xl font-bold text-white">Business Hours</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Monday</span> <span>9:00 AM – 6:30 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Tuesday</span> <span>9:00 AM – 5:00 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Wednesday</span> <span>9:00 AM – 6:30 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Thursday</span> <span>9:00 AM – 8:00 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Friday</span> <span>9:00 AM – 8:00 PM</span></li>
+                            <li class="flex justify-between border-b border-gray-800 pb-2"><span class="text-gray-400">Saturday</span> <span>8:00 AM – 2:00 PM</span></li>
+                            <li class="flex justify-between text-red-400 font-medium pb-2"><span class="text-gray-400">Sunday</span> <span>Closed</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Payment & Extras -->
+                    <div class="bg-[#0b0b0b] p-6 rounded-xl border border-barber-border">
+                        <div class="flex items-center gap-3 mb-6 border-b border-barber-border pb-4">
+                            <i data-lucide="credit-card" class="w-6 h-6 text-barber-gold"></i>
+                            <h3 class="text-xl font-bold text-white">Payments & Policies</h3>
+                        </div>
+                        <ul class="space-y-3 text-gray-300 text-sm">
+                            <li class="flex items-center gap-2"><i data-lucide="banknote" class="w-4 h-4 text-green-500"></i> <span class="font-bold text-white">Cash preferred</span></li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-gray-500"></i> Apple Pay, Venmo, PayPal accepted</li>
+                            <li class="flex items-center gap-2"><i data-lucide="info" class="w-4 h-4 text-gray-500"></i> Card payments +$3 processing fee</li>
+                            <li class="flex items-center gap-2 mt-4 text-barber-gold"><i data-lucide="moon" class="w-4 h-4"></i> Before/After hour appts available (extra fee)</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Location Section -->
+    <section class="py-20 bg-[#0b0b0b] border-t border-barber-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-1/3 space-y-6">
+                    <h2 class="text-3xl font-bold text-white">Find The Shop</h2>
+                    <div class="flex items-start gap-4 text-gray-300">
+                        <i data-lucide="map-pin" class="w-6 h-6 text-barber-gold shrink-0 mt-1"></i>
+                        <div>
+                            <p class="font-bold text-lg text-white">Sam The Barber</p>
+                            <p>532 S Chestnut</p>
+                            <p>Lufkin, TX 75901</p>
+                        </div>
+                    </div>
+                    <a href="https://maps.app.goo.gl/xKcmhu6drMwjZFti8" target="_blank" rel="noopener noreferrer" class="inline-flex bg-barber-card border border-barber-border hover:border-barber-gold text-white font-semibold py-3 px-6 rounded min-h-[44px] transition-colors items-center gap-2" aria-label="View Directions on Google Maps">
+                        <i data-lucide="navigation" class="w-4 h-4 text-barber-gold"></i> View Directions
+                    </a>
+                </div>
+                
+      
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-[#070707] border-t border-barber-border pt-16 pb-8 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            
+            <div class="md:col-span-1">
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-lucide="scissors" class="text-barber-gold w-6 h-6"></i>
+                    <span class="font-bold text-xl tracking-tight text-white uppercase glow-text">Sam The Barber</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                    Precision haircuts and premium grooming services. Setting the standard for every barber in Lufkin TX.
+                </p>
+                <a href="https://instagram.com/samthebarber936" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-gray-400 hover:text-barber-gold transition-colors" aria-label="Follow on Instagram">
+                    <i data-lucide="instagram" class="w-5 h-5"></i> @samthebarber936
+                </a>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-white font-bold mb-6 tracking-wide">Contact</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="phone" class="w-4 h-4 text-barber-gold"></i>
+                        <a href="tel:9366762172" class="hover:text-white transition-colors">(936) 676-2172</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-barber-gold mt-1 shrink-0"></i>
+                        <span>532 S Chestnut<br>Lufkin, TX 75901</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-2">
+    <div class="w-full h-40 rounded-lg border border-barber-border overflow-hidden">
+        <img src="sam's_barbershop_asset/footer-image.jpeg" alt="Sam The Barber Shop" class="w-full h-full object-cover opacity-60">
+    </div>
+</div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 gap-4">
+            <p>&copy; 2024 Sam The Barber. All rights reserved.</p>
+            <p>Designed for Lufkin's Best</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // GSAP Scroll Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        gsap.utils.toArray('.gsap-fade-up').forEach(element => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        });
+
+        // Hero Parallax setup
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: '.hero-content',
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            y: 100,
+            opacity: 0
+        });
+
+        // Service Selection Logic
+        function selectService(name, price) {
+            document.getElementById('serviceName').value = name;
+            document.getElementById('servicePrice').value = price;
+            
+            // Smooth scroll to booking section
+            document.getElementById('booking').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            // Brief highlight effect on inputs
+            const inputs = [document.getElementById('serviceName'), document.getElementById('servicePrice')];
+            inputs.forEach(input => {
+                input.classList.add('ring-2', 'ring-barber-gold');
+                setTimeout(() => {
+                    input.classList.remove('ring-2', 'ring-barber-gold');
+                }, 1000);
+            });
+        }
+
+        // HTML5 Canvas Particle System - Floating Gold Dust
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height, particles;
+
+        function initParticles() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            
+            const particleCount = Math.floor(width * 0.05); // Responsive particle count
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 2 + 0.5,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    speedY: (Math.random() * -0.5) - 0.1, // Float upwards
+                    opacity: Math.random() * 0.5 + 0.1,
+                    pulseSpeed: Math.random() * 0.02 + 0.01,
+                    pulseDir: 1
+                });
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+                // Movement
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                // Wrap around edges
+                if (p.y < -10) p.y = height + 10;
+                if (p.x < -10) p.x = width + 10;
+                if (p.x > width + 10) p.x = -10;
+
+                // Opacity pulse (twinkle)
+                p.opacity += p.pulseSpeed * p.pulseDir;
+                if (p.opacity > 0.8) p.pulseDir = -1;
+                if (p.opacity < 0.1) p.pulseDir = 1;
+
+                // Draw Gold Dust
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(201, 162, 39, ${p.opacity})`;
+                ctx.shadowBlur = p.size * 2;
+                ctx.shadowColor = '#c9a227';
+                ctx.fill();
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        // Initialize and handle resize
+        initParticles();
+        animateParticles();
+
+        window.addEventListener('resize', () => {
+            initParticles();
+        });
+    </script>
+</body>
+</html>
+
